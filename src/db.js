@@ -3,5 +3,6 @@ mongoose.connect(process.env.MONGODB_URI, { useCreateIndex: true, useNewUrlParse
 mongoose.Promise = global.Promise
 
 module.exports = {
-    Users: require('./models/users.model')
+    Users: require('./models/users.model'),
+   
 }
