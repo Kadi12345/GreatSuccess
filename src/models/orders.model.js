@@ -9,7 +9,7 @@ const schema = new Schema({
   Colour: {  type: String, required: false},
   Size: {  type: String, required: false},
   Price: { type: Number, required: true, maxlength: 7 },
-  Client: {  type: Number, required: true},
+  Client: {  type: Number, required: true}, 
   DeliveryMethod: {type: String, enum : ['KULLER','PAKIAUTOMAAT'], required: true},
   Address: { type: String, required: true, street: String, city: String, state: String, zip: Number },
   ParcelMachine: { type: String },
