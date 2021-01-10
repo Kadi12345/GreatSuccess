@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const OrdersSchema = new Schema({
-  OrderID: { type: String, unique: true, required: true, minlength: 1, maxlength: 10, match: [/^[a-zA-Z0-9-.]+$/, 'is invalid'] },
+const schema = new Schema({
+  
   OrderStatus: {type: String, enum : ['MAKSTUD','KOMPLEKTEERITUD','SAADETUD','TÜHISTATUD'], required: true},
   ProductName: { type: String, required: true, minlength: 2, maxlength: 100 },
   Quantity: { type: Number, required: true, maxlength: 3 },
@@ -19,4 +19,4 @@ const OrdersSchema = new Schema({
 
 schema.set('toJSON', { virtuals: true })
 
-module.exports = mongoose.model('orders', OrdersSchema)
+module.exports = mongoose.model('orders', schema)
