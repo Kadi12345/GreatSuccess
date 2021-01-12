@@ -2,18 +2,17 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const schema = new Schema({
-  
-  OrderStatus: {type: String, enum : ['MAKSTUD','KOMPLEKTEERITUD','SAADETUD','TÜHISTATUD'], required: true},
-  ProductName: { type: String, required: true, minlength: 2, maxlength: 100 },
-  Quantity: { type: Number, required: true, maxlength: 3 },
-  Colour: {  type: String, required: false},
-  Size: {  type: String, required: false},
-  Price: { type: Number, required: true, maxlength: 7 },
-  Client: {  type: Number, required: true}, 
-  DeliveryMethod: {type: String, enum : ['KULLER','PAKIAUTOMAAT'], required: true},
-  Address: { type: String, required: true, street: String, city: String, state: String, zip: Number },
-  ParcelMachine: { type: String },
-
+  createdDate: { type: Date, default: Date.now },
+  orderStatus: {type: String, enum : ['MAKSTUD','KOMPLEKTEERITUD','SAADETUD','TÜHISTATUD'], required: true},
+  productName: { type: String, required: true, minlength: 2, maxlength: 100 },
+  quantity: { type: Number, required: true, maxlength: 3 },
+  colour: {  type: String, required: false},
+  size: {  type: String, required: false},
+  price: { type: Number, required: true, maxlength: 7 },
+  client: {  type: Number, required: true}, 
+  deliveryMethod: {type: String, enum : ['KULLER','PAKIAUTOMAAT'], required: true},
+  address: { type: String, required: true, street: String, city: String, state: String, zip: Number },
+  parcelMachine: { type: String },
 },
 )
 
