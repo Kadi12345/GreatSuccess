@@ -9,10 +9,10 @@ const schema = new Schema({
   colour: {  type: String, required: false},
   size: {  type: String, required: false},
   price: { type: Number, required: true, maxlength: 7 },
-  client: {  type: Number, required: true}, 
+  client: { type: Schema.Types.ObjectId, ref: 'users', required: true},
   deliveryMethod: {type: String, enum : ['KULLER','PAKIAUTOMAAT'], required: true},
-  address: { type: String, required: true, street: String, city: String, state: String, zip: Number },
-  parcelMachine: { type: String },
+  address: { type: String, required: false, street: String, city: String, state: String, zip: Number },
+  parcelMachine: { type: String }
 },
 )
 
