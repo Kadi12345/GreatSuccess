@@ -23,7 +23,7 @@ git add.                  <-- if you want to add all changed files
 git add filename.format   <-- if you want to add a specific file
 
 #### Adding commit message
-git commit -m"Description of changes made"
+git commit -m "Description of changes made"
 
 #### Adding changes to the server (master branch)
 git push
