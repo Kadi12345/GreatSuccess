@@ -19,7 +19,7 @@ git pull
 
 #### Adding changes to the development branch:
 cd /home/user/my_project  <-- find the git folder location where repository was configurated<br>
-git add.                  <-- if you want to add all changed files
+git add .                  <-- if you want to add all changed files
 git add filename.format   <-- if you want to add a specific file
 
 #### Adding commit message
