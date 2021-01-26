@@ -4,7 +4,8 @@ mongoose.Promise = global.Promise
 
 module.exports = {
     Users: require('./models/users.model'),
-    Orders: require('./models/orders.model')
+    Orders: require('./models/orders.model'),
+    Products: require('./models/products.model')
     
    
 }

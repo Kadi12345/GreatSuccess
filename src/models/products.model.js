@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const productsSchema = new Schema({
   //kas seda on vaja? kuidas see tekib?
@@ -33,6 +33,6 @@ const productsSchema = new Schema({
     maxlength: 7 },
 })
 
-schema.set('toJSON', { virtuals: true })
+productsSchema.set('toJSON', { virtuals: true });
 
-module.exports = mongoose.model('products', productsSchema)
+module.exports = mongoose.model('products', productsSchema);

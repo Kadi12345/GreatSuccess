@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const usersSchema = new Schema({
     userType: {
@@ -30,6 +30,6 @@ const usersSchema = new Schema({
         default: Date.now },
 })
 
-schema.set('toJSON', { virtuals: true })
+usersSchema.set('toJSON', { virtuals: true })
 
 module.exports = mongoose.model('users', usersSchema)

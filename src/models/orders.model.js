@@ -74,6 +74,6 @@ const ordersSchema = new Schema({
   },
 });
 
-schema.set("toJSON", { virtuals: true });
+ordersSchema.set("toJSON", { virtuals: true });
 
 module.exports = mongoose.model("orders", ordersSchema);
