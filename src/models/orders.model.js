@@ -58,7 +58,7 @@ const ordersSchema = new Schema({
   totalPrice: {
     type: Number,
   },
-  client:[
+  client:
     {
       clientID:{
         type: Schema.Types.ObjectId,
@@ -84,7 +84,6 @@ const ordersSchema = new Schema({
         required: true 
       },
     },
-  ],
   deliveryMethod: {
     type: String,
     enum: ["KULLER", "PAKIAUTOMAAT"],
