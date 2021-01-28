@@ -20,11 +20,7 @@ const usersSchema = new Schema({
         required: true  },
     address: { 
         type: String, 
-        required: true, 
-        street: String, 
-        city: String, 
-        state: String, 
-        zip: Number },
+        required: true },
     createdDate: { 
         type: Date, 
         default: Date.now },
