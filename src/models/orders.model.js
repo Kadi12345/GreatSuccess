@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { schema } = require("./users.model");
 const Schema = mongoose.Schema;
 
 const ordersSchema = new Schema({
@@ -60,18 +61,22 @@ const ordersSchema = new Schema({
     enum: ["KULLER", "PAKIAUTOMAAT"],
     required: true,
   },
-  deliveryAddress: {
-    type: String,
-    required: false,
-    street: String,
-    city: String,
-    state: String,
-    zip: Number,
-  },
+
   parcelMachine: {
     type: String,
     enum: ["Männimäe", "Paalalinn", "Kantreküla", "Peetrimõisa", "Uueveski"],
   },
+});
+
+const addressSchema = new Schema({
+  street: {type: String},
+  city: {type: String},
+  state: {type: String},
+  zip: {type: Number}
+});
+
+schema.add ({
+  deliveryAddress: addressSchema
 });
 
 ordersSchema.set("toJSON", { virtuals: true });
