@@ -103,7 +103,7 @@ const addressSchema = new Schema({
   zip: {type: Number}
 });
 
-schema.add ({
+ordersSchema.add ({
   deliveryAddress: addressSchema
 });
 
