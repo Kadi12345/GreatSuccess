@@ -2,22 +2,26 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ordersSchema = new Schema({
+  orderNumber: {
+    type: String
+  },
   createdDate: {
     type: Date,
     default: Date.now,
   },
-
   orderStatus: {
     type: String,
     enum: ["MAKSTUD", "KOMPLEKTEERITUD", "SAADETUD", "TÜHISTATUD"],
     required: true,
   },
-
   products: [
     {
-      productName: {
+      productID:{
         type: Schema.Types.ObjectId,
-        ref: "products",
+        ref: "products"
+      },
+      productName: {
+        type: String,
         required: true,
         minlength: 2,
         maxlength: 100,
@@ -28,33 +32,58 @@ const ordersSchema = new Schema({
         maxlength: 3,
       },
       colour: {
-        type: Schema.Types.ObjectId,
-        ref: "products",
+        type: String,
         required: false,
       },
       size: {
-        type: Schema.Types.ObjectId,
-        ref: "products",
+        type: String,
         required: false,
       },
+      sizeUnit: { 
+        type: String,
+        required: false 
+      },
+      description:  { 
+        type: String, 
+        required: false, 
+        minlength: 2, 
+        maxlength: 100 },
       price: {
-        type: Schema.Types.ObjectId,
-        ref: "products",
+        type: Number,
         required: true,
         maxlength: 7,
       },
     },
   ],
-
   totalPrice: {
     type: Number,
   },
-
-  client: {
-    type: Schema.Types.ObjectId,
-    ref: "users",
-    required: true,
-  },
+  client:
+    {
+      clientID:{
+        type: Schema.Types.ObjectId,
+        ref: "users"
+      }, 
+      firstName: { 
+        type: String, 
+        required: true, 
+        minlength: 2, 
+        maxlength: 15 
+      },
+    lastName: { 
+        type: String, 
+        required: true, 
+        maxlength: 15 
+      },
+    email: { 
+        type: String, 
+        required: true  
+      },
+    address: { 
+        type: String, 
+        required: true 
+      },
+    },
   deliveryMethod: {
     type: String,
     enum: ["KULLER", "PAKIAUTOMAAT"],
@@ -63,10 +92,6 @@ const ordersSchema = new Schema({
   deliveryAddress: {
     type: String,
     required: false,
-    street: String,
-    city: String,
-    state: String,
-    zip: Number,
   },
   parcelMachine: {
     type: String,
