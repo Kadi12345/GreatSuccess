@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const productsSchema = new Schema({
-  //kas seda on vaja? kuidas see tekib?
-  //productID: {type: String, unique: true, required: true, minlength: 1, maxlength: 10, match: [/^[a-zA-Z0-9-.]+$/, 'is invalid'] },
   type: {
     type: String, 
     enum : ['TOIT','MÄNGUASJAD','TARVIKUD'], 
