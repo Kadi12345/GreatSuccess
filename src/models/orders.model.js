@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const ordersSchema = new Schema({
   orderNumber: {
@@ -98,7 +99,7 @@ const ordersSchema = new Schema({
     enum: ["Männimäe", "Paalalinn", "Kantreküla", "Peetrimõisa", "Uueveski"],
   },
 });
-
+ordersSchema.plugin(AutoIncrement, {inc_field: 'id'});
 ordersSchema.set("toJSON", { virtuals: true });
 
 module.exports = mongoose.model("orders", ordersSchema);
