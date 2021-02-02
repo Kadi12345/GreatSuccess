@@ -89,14 +89,10 @@ const ordersSchema = new Schema({
     enum: ["KULLER", "PAKIAUTOMAAT"],
     required: true,
   },
-<<<<<<< HEAD
-
-=======
   deliveryAddress: {
     type: String,
     required: false,
   },
->>>>>>> f4832a8fd13054eac1e8ba4e6e79bfe5efa61f1f
   parcelMachine: {
     type: String,
     enum: ["Männimäe", "Paalalinn", "Kantreküla", "Peetrimõisa", "Uueveski"],
