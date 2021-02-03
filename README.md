@@ -14,26 +14,52 @@ The task of the Great Success team is to create an e-shop environment which is b
 
 #### Getting changes from the master branch:
 
-cd /home/user/my_project <-- find the git folder location where repository was configurated
-git pull
+`cd /home/user/my_project` <-- find the git folder location where repository was configurated
+`git pull`
 
 #### Adding changes to the development branch:
 
-cd /home/user/my_project <-- find the git folder location where repository was configurated<br>
-git add . <-- if you want to add all changed files
-git add filename.format <-- if you want to add a specific file
+`cd /home/user/my_project` <-- find the git folder location where repository was configurated<br>
+`git add .` <-- if you want to add all changed files
+`git add filename.format` <-- if you want to add a specific file
+
+### Making new branch . Usually branch name is created like this:
+
+First part is a type (story- feature, bug - bugfix),
+second part is ticket number
+
+`git checkout -b feature/ABC-123`
+
+Going to existing branch:
+
+`git checkout feature/ABC-123`
 
 #### Adding commit message
 
-git commit -m "Description of changes made"
+`git commit -m "Description of changes made"`
 
 #### Adding changes to the server (master branch)
 
-git push
+`git push`
 
 ## Configuring the mongodb connection
 
 #### Step 1: Install
+
+<<<<<<< HEAD
+`npm install`
+
+#### Step 2: Make a copy of .env-example named as .env (You can do it manually or run this command in project root)
+
+`cp .env-example .env`
+
+#### Step 3 Add mongo db connection url to .env file
+
+`MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.g29ki.mongodb.net/<dbName>?retryWrites=true&w=majority`
+
+#### Step 4 Run application
+
+# `npm run start:dev`
 
 npm install
 
@@ -48,6 +74,8 @@ MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.g29ki.mongodb.net/<dbNa
 #### Step 4 Run application
 
 npm run start:dev
+
+> > > > > > > 4f7616360a1a9e27303f364f4fb8f794332e419e
 
 #### Step 5 Open http://localhost:3000 in your browser and you should see "Hakkama said!"
 
