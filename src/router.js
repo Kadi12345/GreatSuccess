@@ -8,8 +8,9 @@ const {
   getAllOrders,
   addOrder,
   updateOrder,
-  addProduct,
   getAllProducts,
+  addProduct,
+  updateProduct, 
   getOneProductByID,
 } = require('./controllers');
 
@@ -21,8 +22,10 @@ router.get('/orders', getAllOrders);
 router.post('/order', addOrder);
 router.patch('/order/:id', updateOrder);
 
-router.post('/product', addProduct);
 router.get('/products', getAllProducts);
+router.post('/product', addProduct);
+router.patch('/product/:id', updateProduct);
+
 
 router.get('/product/:id', getOneProductByID);
 
