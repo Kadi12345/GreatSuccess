@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const ordersSchema = new Schema({
   orderNumber: {
-    type: String
+    type: String,
   },
   createdDate: {
     type: Date,
@@ -12,14 +12,14 @@ const ordersSchema = new Schema({
   },
   orderStatus: {
     type: String,
-    enum: ["MAKSTUD", "KOMPLEKTEERITUD", "SAADETUD", "TÜHISTATUD"],
+    enum: ['MAKSTUD', 'KOMPLEKTEERITUD', 'SAADETUD', 'TÜHISTATUD'],
     required: true,
   },
   products: [
     {
-      productID:{
+      productID: {
         type: Schema.Types.ObjectId,
-        ref: "products"
+        ref: 'products',
       },
       productName: {
         type: String,
@@ -40,15 +40,12 @@ const ordersSchema = new Schema({
         type: String,
         required: false,
       },
-      sizeUnit: { 
+      description: {
         type: String,
-        required: false 
+        required: false,
+        minlength: 2,
+        maxlength: 100,
       },
-      description:  { 
-        type: String, 
-        required: false, 
-        minlength: 2, 
-        maxlength: 100 },
       price: {
         type: Number,
         required: true,
@@ -56,38 +53,35 @@ const ordersSchema = new Schema({
       },
     },
   ],
-  totalPrice: {
-    type: Number,
-  },
-  client:
-    {
-      clientID:{
-        type: Schema.Types.ObjectId,
-        ref: "users"
-      }, 
-      firstName: { 
-        type: String, 
-        required: true, 
-        minlength: 2, 
-        maxlength: 15 
-      },
-    lastName: { 
-        type: String, 
-        required: true, 
-        maxlength: 15 
-      },
-    email: { 
-        type: String, 
-        required: true  
-      },
-    address: { 
-        type: String, 
-        required: true 
-      },
+
+  client: {
+    clientID: {
+      type: Schema.Types.ObjectId,
+      ref: 'users',
     },
+    firstName: {
+      type: String,
+      required: true,
+      minlength: 2,
+      maxlength: 15,
+    },
+    lastName: {
+      type: String,
+      required: true,
+      maxlength: 15,
+    },
+    email: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
+  },
   deliveryMethod: {
     type: String,
-    enum: ["KULLER", "PAKIAUTOMAAT"],
+    enum: ['KULLER', 'PAKIAUTOMAAT'],
     required: true,
   },
   deliveryAddress: {
@@ -96,10 +90,14 @@ const ordersSchema = new Schema({
   },
   parcelMachine: {
     type: String,
-    enum: ["Männimäe", "Paalalinn", "Kantreküla", "Peetrimõisa", "Uueveski"],
+    enum: ['Männimäe', 'Paalalinn', 'Kantreküla', 'Peetrimõisa', 'Uueveski'],
   },
 });
-ordersSchema.plugin(AutoIncrement, {inc_field: 'id'});
-ordersSchema.set("toJSON", { virtuals: true });
 
-module.exports = mongoose.model("orders", ordersSchema);
+
+ordersSchema.plugin(AutoIncrement, { inc_field: 'orderID' });
+ordersSchema.set('toJSON', { virtuals: true });
+
+
+
+module.exports = mongoose.model('orders', ordersSchema);
