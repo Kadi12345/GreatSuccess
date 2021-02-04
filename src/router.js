@@ -12,6 +12,7 @@ const {
   addProduct,
   updateProduct, 
   getOneProductByID,
+  deleteOneProductByID,
 } = require('./controllers');
 
 router.get('/users', getAllUsers);
@@ -28,5 +29,6 @@ router.patch('/product/:id', updateProduct);
 
 
 router.get('/product/:id', getOneProductByID);
+router.delete('/product/:id', deleteOneProductByID);
 
 module.exports = router;
