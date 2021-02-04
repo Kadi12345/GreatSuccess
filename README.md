@@ -1,6 +1,11 @@
 ## Nature of the project
 
 The task of the Great Success team is to create an e-shop environment which is built on the basis of mongodb. Postman is used for API development. The team has chosen to create an e-shop for pet supplies. Assignments are distributed among team members using Jira for project management. Sets of work are completed in sprints.
+Out team members:
+Meelis Mumm
+Triin Tajur
+Taive Sarnik
+Kadi Vaigla
 
 ## Configurating git
 
@@ -30,7 +35,7 @@ second part is ticket number
 
 `git checkout -b feature/ABC-123`
 
-Going to existing branch:
+### Going to existing branch:
 
 `git checkout feature/ABC-123`
 
@@ -38,18 +43,21 @@ Going to existing branch:
 
 `git commit -m "Description of changes made"`
 
+### Kõige uuema main brachi sisse tõmbamine
+
+`git pull origin main`
+
 #### Adding changes to the server (master branch)
 
 `git push`
 
-## Configuring the mongodb connection
+### Configuring the mongodb connection
 
-#### Step 1: Install
+#### Step 1 Install
 
-<<<<<<< HEAD
 `npm install`
 
-#### Step 2: Make a copy of .env-example named as .env (You can do it manually or run this command in project root)
+#### Step 2 Make a copy of .env-example named as .env (You can do it manually or run this command in project root)
 
 `cp .env-example .env`
 
@@ -59,26 +67,6 @@ Going to existing branch:
 
 #### Step 4 Run application
 
-# `npm run start:dev`
-
-npm install
-
-#### Step 2: Make a copy of .env-example named as .env (You can do it manually or run this command in project root)
-
-cp .env-example .env
-
-#### Step 3 Add mongo db connection url to .env file
-
-MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.g29ki.mongodb.net/<dbName>?retryWrites=true&w=majority
-
-#### Step 4 Run application
-
-npm run start:dev
-
-> > > > > > > 4f7616360a1a9e27303f364f4fb8f794332e419e
+`npm run start:dev`
 
 #### Step 5 Open http://localhost:3000 in your browser and you should see "Hakkama said!"
-
-### Kõige uuema main brachi sisse tõmbamine
-
-git pull origin main

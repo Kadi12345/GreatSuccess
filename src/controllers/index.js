@@ -9,6 +9,8 @@ module.exports = {
 
   updateUser: require('./updateUser.controller'),
   updateOrder: require('./updateOrder.controller'),
+  updateProduct: require('./updateProduct.controller'),
 
-  getOneProductByID: require('./getOneProductByID.controller')
+  getOneProductByID: require('./getOneProductByID.controller'),
+  deleteOneProductByID: require('./deleteOneProductByID.controller'),
 }
