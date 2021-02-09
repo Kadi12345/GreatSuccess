@@ -43,13 +43,15 @@ second part is ticket number
 
 `git commit -m "Description of changes made"`
 
-### Kõige uuema main brachi sisse tõmbamine
+### Pulling the updated main-branch code
 
 `git pull origin main`
 
-#### Adding changes to the server (master branch)
+#### Adding changes to the server (main branch)
 
 `git push`
+
+
 
 ### Configuring the mongodb connection
 
@@ -70,3 +72,53 @@ second part is ticket number
 `npm run start:dev`
 
 #### Step 5 Open http://localhost:3000 in your browser and you should see "Hakkama said!"
+
+
+### Inserting data to database in Postman
+
+### Adding new user
+**POST** 
+ {
+"userType": "ADMIN",
+"firstName": "Triin",
+"lastName": "Tajur",
+"email": "triin.tajur@karvikud.ee",
+"address": "Tallinna tänav, Viljandi"
+}
+### Adding new product
+**POST**
+{
+"type": "TOIT",
+"productName": "Saiake",
+"size": "10",
+"sizeUnit": "cm",
+"colour": "punane",
+"description": "maitsev",
+"price": 1
+}
+### Adding new order
+**POST**
+
+{
+"orderStatus": "MAKSTUD",
+"products": [
+    {"productID": "601a9cc8c552193ebcfc2cc0",
+      "quantity": 4
+    }
+],
+"client": "601a9b8dc552193ebcfc2cbe",
+ "deliveryMethod": "KULLER",
+  "deliveryAddress": "Sinna kus Meelis elab"
+}
+
+#### Edit data 
+**PATCH**
+
+#### Delete products from database
+**DELETE** 
+{
+  productID: "601a9cc8c552193ebcfc2cc0"
+}
+
+
+
