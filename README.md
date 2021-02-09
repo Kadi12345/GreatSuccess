@@ -78,37 +78,41 @@ second part is ticket number
 
 ### Adding new user
 **POST** 
- {
-"userType": "ADMIN",
-"firstName": "Triin",
-"lastName": "Tajur",
-"email": "triin.tajur@karvikud.ee",
-"address": "Tallinna tänav, Viljandi"
+
+ {<br>
+"userType": "ADMIN",<br>
+"firstName": "Triin",<br>
+"lastName": "Tajur",<br>
+"email": "triin.tajur@karvikud.ee",<br>
+"address": "Tallinna tänav, Viljandi"<br>
 }
+
 ### Adding new product
 **POST**
-{
-"type": "TOIT",
-"productName": "Saiake",
-"size": "10",
-"sizeUnit": "cm",
-"colour": "punane",
-"description": "maitsev",
-"price": 1
+
+{<br>
+"type": "TOIT",<br>
+"productName": "Saiake",<br>
+"size": "10",<br>
+"sizeUnit": "cm",<br>
+"colour": "punane",<br>
+"description": "maitsev",<br>
+"price": 1<br>
 }
+
 ### Adding new order
 **POST**
 
-{
-"orderStatus": "MAKSTUD",
-"products": [
-    {"productID": "601a9cc8c552193ebcfc2cc0",
-      "quantity": 4
-    }
-],
-"client": "601a9b8dc552193ebcfc2cbe",
- "deliveryMethod": "KULLER",
-  "deliveryAddress": "Sinna kus Meelis elab"
+{<br>
+"orderStatus": "MAKSTUD",<br>
+"products": [<br>
+    {"productID": "601a9cc8c552193ebcfc2cc0",<br>
+      "quantity": 4<br>
+    }<br>
+],<br>
+"client": "601a9b8dc552193ebcfc2cbe",<br>
+ "deliveryMethod": "KULLER",<br>
+  "deliveryAddress": "Sinna kus Meelis elab"<br>
 }
 
 #### Edit data 
@@ -116,8 +120,9 @@ second part is ticket number
 
 #### Delete products from database
 **DELETE** 
-{
-  productID: "601a9cc8c552193ebcfc2cc0"
+
+{<br>
+  productID: "601a9cc8c552193ebcfc2cc0"<br>
 }
 
 
