@@ -102,9 +102,6 @@ second part is ticket number
   "deliveryAddress": "Street, City"
 }
 ```
-```json Patch
-
-```
 ```json Delete
 {
   "productID": "601a9cc8c552193ebcfc2cc0"
