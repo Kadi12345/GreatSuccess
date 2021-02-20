@@ -51,8 +51,6 @@ second part is ticket number
 
 `git push`
 
-
-
 ### Configuring the mongodb connection
 
 #### Step 1 Install
@@ -73,55 +71,42 @@ second part is ticket number
 
 #### Step 5 Open http://localhost:3000 in your browser and you should see "Hakkama said!"
 
-
 ### Inserting data to database in Postman
 
-### Adding new user
-**POST** 
 ```json New User
- {<br>
-"userType": "ADMIN",<br>
-"firstName": "Triin",<br>
-"lastName": "Tajur",<br>
-"email": "triin.tajur@karvikud.ee",<br>
-"address": "Tallinna tänav, Viljandi"<br>
+{
+  "userType": "ADMIN",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "johndoe@email.com",
+  "address": "Street, City"
 }
 ```
-### Adding new product
-**POST**
 ```json New Product
-{<br>
-"type": "TOIT",<br>
-"productName": "Saiake",<br>
-"size": "10",<br>
-"sizeUnit": "cm",<br>
-"colour": "punane",<br>
-"description": "maitsev",<br>
-"price": 1<br>
+{
+  "type": "TOIT",
+  "productName": "Bread",
+  "size": "1",
+  "sizeUnit": "kg",
+  "colour": "yellow",
+  "description": "delicious",
+  "price": 1
 }
 ```
-### Adding new order
-**POST**
 ```json New Order
-{<br>
-"orderStatus": "MAKSTUD",<br>
-"products": [<br>
-    {"productID": "601a9cc8c552193ebcfc2cc0",<br>
-      "quantity": 4<br>
-    }<br>
-],<br>
-"client": "601a9b8dc552193ebcfc2cbe",<br>
- "deliveryMethod": "KULLER",<br>
-  "deliveryAddress": "Sinna kus Meelis elab"<br>
+{
+  "orderStatus": "MAKSTUD",
+  "products": [{ "productID": "601a9cc8c552193ebcfc2cc0", "quantity": 4 }],
+  "client": "601a9b8dc552193ebcfc2cbe",
+  "deliveryMethod": "KULLER",
+  "deliveryAddress": "Street, City"
 }
 ```
 ```json Patch
-**PATCH**
+
 ```
 ```json Delete
-{<br>
-  productID: "601a9cc8c552193ebcfc2cc0"<br>
+{
+  "productID": "601a9cc8c552193ebcfc2cc0"
 }
 ```
-
-
