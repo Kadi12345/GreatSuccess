@@ -78,7 +78,7 @@ second part is ticket number
 
 ### Adding new user
 **POST** 
-
+```json New User
  {<br>
 "userType": "ADMIN",<br>
 "firstName": "Triin",<br>
@@ -86,10 +86,10 @@ second part is ticket number
 "email": "triin.tajur@karvikud.ee",<br>
 "address": "Tallinna tänav, Viljandi"<br>
 }
-
+```
 ### Adding new product
 **POST**
-
+```json New Product
 {<br>
 "type": "TOIT",<br>
 "productName": "Saiake",<br>
@@ -99,10 +99,10 @@ second part is ticket number
 "description": "maitsev",<br>
 "price": 1<br>
 }
-
+```
 ### Adding new order
 **POST**
-
+```json New Order
 {<br>
 "orderStatus": "MAKSTUD",<br>
 "products": [<br>
@@ -114,16 +114,14 @@ second part is ticket number
  "deliveryMethod": "KULLER",<br>
   "deliveryAddress": "Sinna kus Meelis elab"<br>
 }
-
-#### Edit data 
+```
+```json Patch
 **PATCH**
-
-#### Delete products from database
-**DELETE** 
-
+```
+```json Delete
 {<br>
   productID: "601a9cc8c552193ebcfc2cc0"<br>
 }
-
+```
 
 
