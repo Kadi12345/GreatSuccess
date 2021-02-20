@@ -87,7 +87,7 @@ second part is ticket number
 
 #### New product
 
-```json New Product
+```json
 {
   "type": "TOIT",
   "productName": "Bread",
@@ -101,7 +101,7 @@ second part is ticket number
 
 #### New order
 
-```json New Order
+```json
 {
   "orderStatus": "MAKSTUD",
   "products": [{ "productID": "601a9cc8c552193ebcfc2cc0", "quantity": 4 }],
@@ -113,7 +113,7 @@ second part is ticket number
 
 #### Delete
 
-```json Delete
+```json
 {
   "productID": "601a9cc8c552193ebcfc2cc0"
 }
