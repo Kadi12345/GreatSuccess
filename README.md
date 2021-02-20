@@ -73,7 +73,9 @@ second part is ticket number
 
 ### Inserting data to database in Postman
 
-```json New User
+#### New user
+
+```json
 {
   "userType": "ADMIN",
   "firstName": "John",
@@ -82,6 +84,9 @@ second part is ticket number
   "address": "Street, City"
 }
 ```
+
+#### New product
+
 ```json New Product
 {
   "type": "TOIT",
@@ -93,6 +98,9 @@ second part is ticket number
   "price": 1
 }
 ```
+
+#### New order
+
 ```json New Order
 {
   "orderStatus": "MAKSTUD",
@@ -102,6 +110,9 @@ second part is ticket number
   "deliveryAddress": "Street, City"
 }
 ```
+
+#### Delete
+
 ```json Delete
 {
   "productID": "601a9cc8c552193ebcfc2cc0"
