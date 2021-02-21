@@ -5,8 +5,11 @@ The task of the Great Success team is to create an e-shop environment which is b
 ### Team members:
 
 Meelis Mumm
+
 Triin Tajur
+
 Taive Sarnik
+
 Kadi Vaigla
 
 ## Configurating git
