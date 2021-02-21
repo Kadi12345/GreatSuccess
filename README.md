@@ -24,17 +24,6 @@ Kadi Vaigla
 
 `git clone https://github.com/Kadi12345/GreatSuccess.git`
 
-#### Getting changes from the master branch:
-
-`cd /home/user/my_project` <-- find the git folder location where repository was configurated
-`git pull`
-
-#### Adding changes to the development branch:
-
-`cd /home/user/my_project` <-- find the git folder location where repository was configurated
-`git add .` <-- if you want to add all changed files
-`git add filename.format` <-- if you want to add a specific file
-
 ## Configuring mongoDB connection
 
 #### Step 1 Install
@@ -79,6 +68,12 @@ Second part is ticket number.
 ### Adding changes to the server (main branch)
 
 `git push`
+
+### Adding changes to the development branch:
+
+`cd /home/user/my_project` <-- find the git folder location where repository was configurated
+`git add .` <-- if you want to add all changed files
+`git add filename.format` <-- if you want to add a specific file
 
 ## Inserting data to database in Postman
 
