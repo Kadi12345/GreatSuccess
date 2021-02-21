@@ -46,30 +46,30 @@ Kadi Vaigla
 
 ## Branching Models
 
-### Making a new branch
+#### Making a new branch
 
 First part is a type (story- feature, bug - bugfix).
 Second part is ticket number.
 
 `git checkout -b feature/ABC-123`
 
-### Going to existing branch
+#### Going to existing branch
 
 `git checkout feature/ABC-123`
 
-### Adding commit message
+#### Adding commit message
 
 `git commit -m "Description of changes made"`
 
-### Pulling the updated main-branch code
+#### Pulling the updated main-branch code
 
 `git pull origin main`
 
-### Adding changes to the server (main branch)
+#### Adding changes to the server (main branch)
 
 `git push`
 
-### Adding changes to the development branch:
+#### Adding changes to the development branch:
 
 `cd /home/user/my_project` <-- find the git folder location where repository was configurated
 `git add .` <-- if you want to add all changed files
@@ -77,7 +77,7 @@ Second part is ticket number.
 
 ## Inserting data to database in Postman
 
-### New user
+#### New user
 
 ```json
 {
@@ -89,7 +89,7 @@ Second part is ticket number.
 }
 ```
 
-### New product
+#### New product
 
 ```json
 {
@@ -103,7 +103,7 @@ Second part is ticket number.
 }
 ```
 
-### New order
+#### New order
 
 ```json
 {
@@ -115,7 +115,7 @@ Second part is ticket number.
 }
 ```
 
-### Delete
+#### Delete
 
 ```json
 {
