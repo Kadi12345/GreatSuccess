@@ -48,7 +48,8 @@ Kadi Vaigla
 
 #### Making a new branch
 
-First part is a type (story- feature, bug - bugfix).
+First part is a type (story - feature, bug - bugfix).
+
 Second part is ticket number.
 
 `git checkout -b feature/ABC-123`
@@ -71,11 +72,9 @@ Second part is ticket number.
 
 #### Adding changes to the development branch:
 
-`cd /home/user/my_project` <-- find the git folder where the repository was configurated
+`git add .` <-- if you want to add all changed files.
 
-`git add .` <-- if you want to add all changed files
-
-`git add filename.format` <-- if you want to add a specific file
+`git add filename.format` <-- if you want to add a specific file.
 
 ## Inserting data to database in Postman
 
