@@ -1,10 +1,15 @@
 ## Nature of the project
 
-The task of the Great Success team is to create an e-shop environment which is built on the basis of mongodb. Postman is used for API development. The team has chosen to create an e-shop for pet supplies. Assignments are distributed among team members using Jira for project management. Sets of work are completed in sprints.
-Out team members:
+The task of the Great Success team is to create an e-shop environment which is built on the basis of mongoDB. Postman is used for API development. The team has chosen to create an e-shop for pet supplies. Assignments are distributed among team members using Jira for project management. Sets of work are completed in sprints.
+
+### Team members:
+
 Meelis Mumm
+
 Triin Tajur
+
 Taive Sarnik
+
 Kadi Vaigla
 
 ## Configurating git
@@ -15,57 +20,23 @@ Kadi Vaigla
 
 #### Step 3: right click on the folder and open it in terminal
 
-#### Step 4: insert into the terminal: git clone https://github.com/Kadi12345/GreatSuccess.git
+#### Step 4: insert into the terminal:
 
-#### Getting changes from the master branch:
+`git clone https://github.com/Kadi12345/GreatSuccess.git`
 
-`cd /home/user/my_project` <-- find the git folder location where repository was configurated
-`git pull`
-
-#### Adding changes to the development branch:
-
-`cd /home/user/my_project` <-- find the git folder location where repository was configurated<br>
-`git add .` <-- if you want to add all changed files
-`git add filename.format` <-- if you want to add a specific file
-
-### Making new branch . Usually branch name is created like this:
-
-First part is a type (story- feature, bug - bugfix),
-second part is ticket number
-
-`git checkout -b feature/ABC-123`
-
-### Going to existing branch:
-
-`git checkout feature/ABC-123`
-
-#### Adding commit message
-
-`git commit -m "Description of changes made"`
-
-### Pulling the updated main-branch code
-
-`git pull origin main`
-
-#### Adding changes to the server (main branch)
-
-`git push`
-
-
-
-### Configuring the mongodb connection
+## Configuring mongoDB connection
 
 #### Step 1 Install
 
 `npm install`
 
-#### Step 2 Make a copy of .env-example named as .env (You can do it manually or run this command in project root)
+#### Step 2 Make a copy of .env-example named as .env (can do it manually or run this command in project root)
 
 `cp .env-example .env`
 
 #### Step 3 Add mongo db connection url to .env file
 
-`MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.g29ki.mongodb.net/<dbName>?retryWrites=true&w=majority`
+`MONGODB_URI=mongodb+srv://yoururlhere`
 
 #### Step 4 Run application
 
@@ -73,57 +44,82 @@ second part is ticket number
 
 #### Step 5 Open http://localhost:3000 in your browser and you should see "Hakkama said!"
 
+## Branching Models
 
-### Inserting data to database in Postman
+#### Making a new branch
 
-### Adding new user
-**POST** 
+First part is a type (story - feature, bug - bugfix).
 
- {<br>
-"userType": "ADMIN",<br>
-"firstName": "Triin",<br>
-"lastName": "Tajur",<br>
-"email": "triin.tajur@karvikud.ee",<br>
-"address": "Tallinna tänav, Viljandi"<br>
+Second part is ticket number.
+
+`git checkout -b feature/ABC-123`
+
+#### Going to existing branch
+
+`git checkout feature/ABC-123`
+
+#### Adding commit message
+
+`git commit -m "Description of changes made"`
+
+#### Pulling the updated main-branch code
+
+`git pull origin main`
+
+#### Adding changes to the server (main branch)
+
+`git push`
+
+#### Adding changes to the development branch:
+
+`git add .` <-- if you want to add all changed files.
+
+`git add filename.format` <-- if you want to add a specific file.
+
+## Inserting data to database in Postman
+
+#### New user
+
+```json
+{
+  "userType": "ADMIN",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "johndoe@email.com",
+  "address": "Street, City"
 }
+```
 
-### Adding new product
-**POST**
+#### New product
 
-{<br>
-"type": "TOIT",<br>
-"productName": "Saiake",<br>
-"size": "10",<br>
-"sizeUnit": "cm",<br>
-"colour": "punane",<br>
-"description": "maitsev",<br>
-"price": 1<br>
+```json
+{
+  "type": "TOIT",
+  "productName": "Bread",
+  "size": "1",
+  "sizeUnit": "kg",
+  "colour": "yellow",
+  "description": "delicious",
+  "price": 1
 }
+```
 
-### Adding new order
-**POST**
+#### New order
 
-{<br>
-"orderStatus": "MAKSTUD",<br>
-"products": [<br>
-    {"productID": "601a9cc8c552193ebcfc2cc0",<br>
-      "quantity": 4<br>
-    }<br>
-],<br>
-"client": "601a9b8dc552193ebcfc2cbe",<br>
- "deliveryMethod": "KULLER",<br>
-  "deliveryAddress": "Sinna kus Meelis elab"<br>
+```json
+{
+  "orderStatus": "MAKSTUD",
+  "products": [{ "productID": "601a9cc8c552193ebcfc2cc0", "quantity": 4 }],
+  "client": "601a9b8dc552193ebcfc2cbe",
+  "deliveryMethod": "KULLER",
+  "deliveryAddress": "Street, City"
 }
+```
 
-#### Edit data 
-**PATCH**
+#### Delete
 
-#### Delete products from database
-**DELETE** 
-
-{<br>
-  productID: "601a9cc8c552193ebcfc2cc0"<br>
+```json
+{
+  "productID": "601a9cc8c552193ebcfc2cc0"
 }
-
-
-
+```

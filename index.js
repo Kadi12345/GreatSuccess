@@ -1,21 +1,20 @@
-require('dotenv').config()
-const express = require('express')
-const app = express()
-const bodyParser = require('body-parser')
-const port = 3000
-const router = require('./src/router')
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const port = 3000;
+const router = require('./src/router');
 
-
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get('/', (req, res, next, error) => {
-  if (error) res.status(500)
-  res.send('Hakkama said!')
-})
+  if (error) res.status(500);
+  res.send('Hakkama said!');
+});
 
-app.use('/api', router)
+app.use('/api', router);
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`)
-})
+  console.log(`Server is running on http://localhost:${port}`);
+});
