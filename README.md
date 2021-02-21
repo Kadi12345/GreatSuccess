@@ -32,7 +32,7 @@ Kadi Vaigla
 `git add .` <-- if you want to add all changed files
 `git add filename.format` <-- if you want to add a specific file
 
-## Configuring the mongodb connection
+## Configuring mongoDB connection
 
 #### Step 1 Install
 
@@ -65,7 +65,7 @@ Second part is ticket number.
 
 `git checkout feature/ABC-123`
 
-#### Adding commit message
+### Adding commit message
 
 `git commit -m "Description of changes made"`
 
@@ -73,13 +73,13 @@ Second part is ticket number.
 
 `git pull origin main`
 
-#### Adding changes to the server (main branch)
+### Adding changes to the server (main branch)
 
 `git push`
 
-### Inserting data to database in Postman
+## Inserting data to database in Postman
 
-#### New user
+### New user
 
 ```json
 {
@@ -91,7 +91,7 @@ Second part is ticket number.
 }
 ```
 
-#### New product
+### New product
 
 ```json
 {
@@ -105,7 +105,7 @@ Second part is ticket number.
 }
 ```
 
-#### New order
+### New order
 
 ```json
 {
@@ -117,7 +117,7 @@ Second part is ticket number.
 }
 ```
 
-#### Delete
+### Delete
 
 ```json
 {
