@@ -71,7 +71,7 @@ Second part is ticket number.
 
 #### Adding changes to the development branch:
 
-`cd /home/user/my_project` <-- find the git folder location where repository was configurated
+`cd /home/user/my_project` <-- find the git folder where the repository was configurated
 
 `git add .` <-- if you want to add all changed files
 
