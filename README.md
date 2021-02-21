@@ -1,7 +1,9 @@
 ## Nature of the project
 
 The task of the Great Success team is to create an e-shop environment which is built on the basis of mongodb. Postman is used for API development. The team has chosen to create an e-shop for pet supplies. Assignments are distributed among team members using Jira for project management. Sets of work are completed in sprints.
-Out team members:
+
+#### Team members:
+
 Meelis Mumm
 Triin Tajur
 Taive Sarnik
@@ -15,7 +17,9 @@ Kadi Vaigla
 
 #### Step 3: right click on the folder and open it in terminal
 
-#### Step 4: insert into the terminal: git clone https://github.com/Kadi12345/GreatSuccess.git
+#### Step 4: insert into the terminal:
+
+`git clone https://github.com/Kadi12345/GreatSuccess.git`
 
 #### Getting changes from the master branch:
 
@@ -24,14 +28,36 @@ Kadi Vaigla
 
 #### Adding changes to the development branch:
 
-`cd /home/user/my_project` <-- find the git folder location where repository was configurated<br>
+`cd /home/user/my_project` <-- find the git folder location where repository was configurated
 `git add .` <-- if you want to add all changed files
 `git add filename.format` <-- if you want to add a specific file
 
-### Making new branch . Usually branch name is created like this:
+## Configuring the mongodb connection
 
-First part is a type (story- feature, bug - bugfix),
-second part is ticket number
+#### Step 1 Install
+
+`npm install`
+
+#### Step 2 Make a copy of .env-example named as .env (can do it manually or run this command in project root)
+
+`cp .env-example .env`
+
+#### Step 3 Add mongo db connection url to .env file
+
+`MONGODB_URI=mongodb+srv://yoururlhere`
+
+#### Step 4 Run application
+
+`npm run start:dev`
+
+#### Step 5 Open http://localhost:3000 in your browser and you should see "Hakkama said!"
+
+## Branching Models
+
+### Making a new branch
+
+First part is a type (story- feature, bug - bugfix).
+Second part is ticket number.
 
 `git checkout -b feature/ABC-123`
 
@@ -50,26 +76,6 @@ second part is ticket number
 #### Adding changes to the server (main branch)
 
 `git push`
-
-### Configuring the mongodb connection
-
-#### Step 1 Install
-
-`npm install`
-
-#### Step 2 Make a copy of .env-example named as .env (You can do it manually or run this command in project root)
-
-`cp .env-example .env`
-
-#### Step 3 Add mongo db connection url to .env file
-
-`MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.g29ki.mongodb.net/<dbName>?retryWrites=true&w=majority`
-
-#### Step 4 Run application
-
-`npm run start:dev`
-
-#### Step 5 Open http://localhost:3000 in your browser and you should see "Hakkama said!"
 
 ### Inserting data to database in Postman
 
