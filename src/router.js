@@ -35,5 +35,4 @@ router.delete('/product/:id', deleteOneProductByID);
 
 router.post('/login', userLogin);
 
-router.get('/dashboard', verifyToken, verifyRole);
 module.exports = router;
