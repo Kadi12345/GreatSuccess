@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken');
-const verifyToken = require('./middleware/verifyToken');
+
+const { verifyToken, verifyRole } = require('./middleware');
 
 const {
   getAllUsers,
@@ -15,8 +15,8 @@ const {
   updateProduct,
   getOneProductByID,
   deleteOneProductByID,
+  userLogin,
 } = require('./controllers');
-const { Users } = require('./db');
 
 router.get('/users', getAllUsers);
 router.post('/user', addUser);
@@ -33,21 +33,7 @@ router.patch('/product/:id', updateProduct);
 router.get('/product/:id', getOneProductByID);
 router.delete('/product/:id', deleteOneProductByID);
 
-router.post('/login', async (req, res) => {
-  const user = await Users.findOne({ email: req.body.email });
-  if (!user) return res.status(400).send('Email not found!');
+router.post('/login', userLogin);
 
-  const token = jwt.sign({ _id: user._id, email: user.email, userType: user.userType }, process.env.JWT_SECRET);
-  res.header('jwt_token', token).send(token);
-});
-
-router.get('/dashboard', verifyToken, (req, res) => {
-  let userData = req.user.userType;
-
-  if (userData === 'ADMIN') {
-    res.send("Welcome, ADMIN");
-  } else {
-    res.send('What are you doing here?');
-  }
-});
+router.get('/dashboard', verifyToken, verifyRole);
 module.exports = router;

@@ -13,4 +13,6 @@ module.exports = {
 
   getOneProductByID: require('./getOneProductByID.controller'),
   deleteOneProductByID: require('./deleteOneProductByID.controller'),
-}
+
+  userLogin: require('./userLogin.controller'),
+};
