@@ -27,7 +27,7 @@ router.post('/order', addOrder);
 router.patch('/order/:id', updateOrder);
 
 router.get('/products', getAllProducts);
-router.post('/product', addProduct);
+router.post('/product', verifyToken, verifyRole, addProduct);
 router.patch('/product/:id', updateProduct);
 
 router.get('/product/:id', getOneProductByID);
