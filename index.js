@@ -8,8 +8,7 @@ const router = require('./src/router');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res, next, error) => {
-  if (error) res.status(500);
+app.get('/', (req, res) => {
   res.send('Hakkama said!');
 });
 
