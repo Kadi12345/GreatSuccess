@@ -19,7 +19,7 @@ const {
 } = require('./controllers');
 
 router.get('/users', getAllUsers);
-router.post('/user', addUser);
+router.post('/user', verifyToken, verifyRole, addUser);
 router.patch('/user/:id', updateUser);
 
 router.get('/orders', getAllOrders);
